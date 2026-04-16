@@ -1,6 +1,6 @@
-# SchemaFlow
+# Multi-Stage NL to ER Diagram and SQL Generator
 
-SchemaFlow turns natural language requirements into a Chen-style ER diagram and SQL DDL. The app supports a guided flow with clarifying questions, diagram generation, refinement, validation, and SQL export.
+Multi-Stage NL to ER Diagram and SQL Generator turns natural language requirements into a Chen-style ER diagram and SQL DDL. The app supports a guided flow with clarifying questions, diagram generation, refinement, validation, and SQL export.
 
 ## What It Does
 
@@ -77,7 +77,7 @@ flowchart TB
 ## Repository Layout
 
 ```text
-SchemaFlow/
+Multi-Stage NL to ER Diagram and SQL Generator/
   backend/
     app/
       models/
