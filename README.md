@@ -173,3 +173,4 @@ The backend works without an API key; the key is optional.
 ## Documentation
 
 For a deeper explanation of the frontend/backend split and request flow, see [docs/architecture.md](./docs/architecture.md).
+# NL-to-ER-Diagram-and-SQL-Generator
