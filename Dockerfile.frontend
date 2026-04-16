@@ -1,0 +1,28 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY frontend/package.json ./
+COPY frontend/package-lock.json* ./
+
+# Install dependencies
+RUN npm install
+
+# Copy source code
+COPY frontend/public ./public
+COPY frontend/src ./src
+COPY frontend/tailwind.config.js frontend/postcss.config.js ./
+
+# Copy environment file
+COPY frontend/.env.local .env.local
+
+# Build the application
+RUN npm run build
+
+# Serve with node
+RUN npm install -g serve
+
+EXPOSE 3000
+
+CMD ["serve", "-s", "build", "-l", "3000"]

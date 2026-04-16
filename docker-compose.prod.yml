@@ -1,0 +1,50 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: schemaflow-backend-prod
+    ports:
+      - "8000:8000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - DEBUG=False
+      - FRONTEND_URL=https://yourdomain.com
+    restart: always
+    networks:
+      - schemaflow-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: schemaflow-frontend-prod
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=https://api.yourdomain.com
+    depends_on:
+      - backend
+    restart: always
+    networks:
+      - schemaflow-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: schemaflow-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:ro
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - schemaflow-network
+
+networks:
+  schemaflow-network:
+    driver: bridge
