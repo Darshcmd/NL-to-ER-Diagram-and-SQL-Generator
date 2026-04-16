@@ -1,17 +1,22 @@
+
 # Multi-Stage NL to ER Diagram and SQL Generator
 
-Multi-Stage NL to ER Diagram and SQL Generator turns natural language requirements into a Chen-style ER diagram and SQL DDL. The app supports a guided flow with clarifying questions, diagram generation, refinement, validation, and SQL export.
+**A Multi-Stage Question-Driven Framework for Automated Entity-Relationship Modeling and Multi-Dialect SQL Synthesis**  
+Developed as part of IEEE-style research work under **Dr. Rishikeshan C. A. (Assistant Professor, School of Computer Science and Engineering, VIT Chennai)**.
+
+Multi-Stage NL to ER Diagram and SQL Generator transforms natural language requirements into Chen-style ER diagrams and SQL DDL statements. The system follows a structured multi-stage pipeline inspired by IEEE research methodology, incorporating ambiguity detection, interactive schema refinement, validation, and multi-dialect SQL generation.
 
 ## What It Does
 
-- Accepts a requirement brief or uploaded document as schema context
-- Generates targeted clarifying questions when the input is ambiguous
-- Builds a Chen ER diagram from the confirmed requirements
-- Lets you refine the schema and regenerate the diagram
-- Exports SQL for multiple dialects
-- Surfaces validation notes so the generated schema stays readable and structured
+- Accepts requirement briefs or uploaded documents as schema context  
+- Generates targeted clarifying questions for ambiguous requirements  
+- Builds Chen-style ER diagrams from refined schema definitions  
+- Supports iterative schema refinement and regeneration  
+- Generates SQL for multiple database dialects  
+- Performs structural validation and normalization checks  
+- Exports validated schema and SQL outputs  
 
-## At A Glance
+## Fig. 1(a) At-A-Glance Block Diagram
 
 ```mermaid
 flowchart LR
@@ -25,9 +30,9 @@ flowchart LR
     UI --> Review[Validation and export panels]
     Diagram --> Review
     SQL --> Review
-```
+````
 
-## Pipeline
+## Fig. 1(b) Pipeline Block Diagram
 
 ```mermaid
 flowchart TB
@@ -39,7 +44,7 @@ flowchart TB
     E --> F[SQLViewer]
 ```
 
-## Block Diagram
+## Fig. 1(c) Overall System Block Diagram
 
 ```mermaid
 flowchart TB
@@ -108,13 +113,13 @@ Multi-Stage NL to ER Diagram and SQL Generator/
 
 ## Local Setup
 
-Prerequisites:
+### Prerequisites
 
-- Python 3.11+
-- Node 18+
-- Optional: Docker
+* Python 3.11+
+* Node 18+
+* Optional: Docker
 
-Backend:
+### Backend
 
 ```bash
 cd backend
@@ -124,7 +129,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Frontend:
+### Frontend
 
 ```bash
 cd frontend
@@ -132,7 +137,7 @@ npm install
 npm start
 ```
 
-Docker:
+### Docker
 
 ```bash
 docker-compose up --build
@@ -140,37 +145,64 @@ docker-compose up --build
 
 ## Environment
 
-Copy [`.env.example`](./.env.example) to your local `.env` files as needed.
+Copy `.env.example` to local `.env` files.
 
-- `backend/.env` can define `GEMINI_API_KEY`, `BACKEND_URL`, `FRONTEND_URL`, and `DEBUG`
-- `frontend/.env.local` can define `REACT_APP_API_URL`
+Backend:
 
-The backend works without an API key; the key is optional.
+* GEMINI_API_KEY
+* BACKEND_URL
+* FRONTEND_URL
+* DEBUG
+
+Frontend:
+
+* REACT_APP_API_URL
+
+The system works without an API key. API key usage is optional.
 
 ## API Surface
 
-- `POST /api/chat/init`
-- `POST /api/chat/confirm-answers`
-- `POST /api/chat/refine`
-- `POST /api/chat/generate-sql`
-- `GET /api/chat/session/{session_id}`
-- `POST /api/files/upload`
-- `POST /api/schema/questions`
-- `POST /api/schema/diagram`
-- `POST /api/schema/sql`
-- `POST /api/schema/refine`
-- `GET /health`
+* POST /api/chat/init
+* POST /api/chat/confirm-answers
+* POST /api/chat/refine
+* POST /api/chat/generate-sql
+* GET /api/chat/session/{session_id}
+* POST /api/files/upload
+* POST /api/schema/questions
+* POST /api/schema/diagram
+* POST /api/schema/sql
+* POST /api/schema/refine
+* GET /health
 
 ## Key Files
 
-- [backend/main.py](./backend/main.py) wires up FastAPI, routers, and health checks
-- [backend/app/services/gemini_service.py](./backend/app/services/gemini_service.py) builds Mermaid and SQL output
-- [frontend/src/components/MainApp.jsx](./frontend/src/components/MainApp.jsx) controls the app stages
-- [frontend/src/components/InputPhase.jsx](./frontend/src/components/InputPhase.jsx) handles the initial requirement brief
-- [frontend/src/components/MermaidDiagram.jsx](./frontend/src/components/MermaidDiagram.jsx) renders and exports the diagram
-- [frontend/src/components/SQLViewer.jsx](./frontend/src/components/SQLViewer.jsx) shows the generated SQL
+* backend/main.py — FastAPI initialization and routing
+* backend/app/services/gemini_service.py — ER and SQL generation logic
+* frontend/src/components/MainApp.jsx — Application state controller
+* frontend/src/components/InputPhase.jsx — Input processing
+* frontend/src/components/MermaidDiagram.jsx — ER visualization
+* frontend/src/components/SQLViewer.jsx — SQL display
 
 ## Documentation
 
-For a deeper explanation of the frontend/backend split and request flow, see [docs/architecture.md](./docs/architecture.md).
-# NL-to-ER-Diagram-and-SQL-Generator
+Refer to:
+
+docs/architecture.md
+
+for detailed system architecture, pipeline flow, and module explanations.
+
+---
+
+**Authors**
+Darsh Soni
+Dr. Rishikeshan C. A.
+School of Computer Science and Engineering
+Vellore Institute of Technology Chennai
+
+---
+
+**IEEE Research Project**
+Multi-Stage Question-Driven Framework for Automated
+Entity-Relationship Modeling and Multi-Dialect SQL Synthesis
+
+
