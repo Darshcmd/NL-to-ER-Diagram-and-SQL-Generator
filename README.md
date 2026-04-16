@@ -78,39 +78,6 @@ flowchart TB
     MermaidDiagram --> ValidationPanel
     SQLViewer --> ChatHistory
 ```
-
-## Repository Layout
-
-```text
-Multi-Stage NL to ER Diagram and SQL Generator/
-  backend/
-    app/
-      models/
-      routes/
-      services/
-      utils/
-    main.py
-    requirements.txt
-  frontend/
-    src/
-      components/
-      context/
-      hooks/
-      utils/
-    package.json
-    package-lock.json
-  docs/
-    architecture.md
-  Dockerfile.backend
-  Dockerfile.frontend
-  docker-compose.yml
-  docker-compose.prod.yml
-  Makefile
-  dev.sh
-  .env.example
-  .gitignore
-```
-
 ## Local Setup
 
 ### Prerequisites
@@ -136,13 +103,6 @@ cd frontend
 npm install
 npm start
 ```
-
-### Docker
-
-```bash
-docker-compose up --build
-```
-
 ## Environment
 
 Copy `.env.example` to local `.env` files.
@@ -204,5 +164,6 @@ Vellore Institute of Technology Chennai
 **IEEE Research Project**
 Multi-Stage Question-Driven Framework for Automated
 Entity-Relationship Modeling and Multi-Dialect SQL Synthesis
+
 
 
