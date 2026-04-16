@@ -153,7 +153,7 @@ for detailed system architecture, pipeline flow, and module explanations.
 
 ---
 
-**Authors**
+**Authors** <br>
 Darsh Soni <br>
 Dr. Rishikeshan C. A.<br>
 School of Computer Science and Engineering <br>
@@ -161,7 +161,7 @@ Vellore Institute of Technology Chennai
 
 ---
 
-**IEEE Research Project**
+**IEEE Research Project** <br>
 Multi-Stage Question-Driven Framework for Automated <br>
 Entity-Relationship Modeling and Multi-Dialect SQL Synthesis
 
