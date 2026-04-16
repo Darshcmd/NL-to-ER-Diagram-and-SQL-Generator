@@ -86,6 +86,8 @@ flowchart TB
 * Node 18+
 * Optional: Docker
 
+### Change the .env.local to .env file and add GEMINI API KEY
+
 ### Backend
 
 ```bash
