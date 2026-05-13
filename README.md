@@ -9,7 +9,7 @@ Multi-Stage NL to ER Diagram and SQL Generator transforms natural language requi
 ## Live Deployment
 
 Frontend (Vercel):  
-https://your-vercel-frontend-url.vercel.app
+https://nl-to-er-diagram-and-sql-generator-icnn9oeac.vercel.app
 
 Backend API (Render):  
 https://nl-to-er-diagram-and-sql-generator.onrender.com
@@ -225,5 +225,3 @@ Vellore Institute of Technology Chennai
 **IEEE Research Project** <br>
 Multi-Stage Question-Driven Framework for Automated <br>
 Entity-Relationship Modeling and Multi-Dialect SQL Synthesis
-
-```
