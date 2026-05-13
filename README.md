@@ -1,4 +1,4 @@
-````md
+
 # Multi-Stage NL to ER Diagram and SQL Generator
 
 **A Multi-Stage Question-Driven Framework for Automated Entity-Relationship Modeling and Multi-Dialect SQL Synthesis**  
@@ -226,5 +226,4 @@ Vellore Institute of Technology Chennai
 Multi-Stage Question-Driven Framework for Automated <br>
 Entity-Relationship Modeling and Multi-Dialect SQL Synthesis
 
-```
 ```
