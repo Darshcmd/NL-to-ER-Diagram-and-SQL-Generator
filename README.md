@@ -1,10 +1,18 @@
-
+````md
 # Multi-Stage NL to ER Diagram and SQL Generator
 
 **A Multi-Stage Question-Driven Framework for Automated Entity-Relationship Modeling and Multi-Dialect SQL Synthesis**  
 Developed as part of IEEE-style research work under **Dr. Rishikeshan C. A. (Assistant Professor, School of Computer Science and Engineering, VIT Chennai)**.
 
 Multi-Stage NL to ER Diagram and SQL Generator transforms natural language requirements into Chen-style ER diagrams and SQL DDL statements. The system follows a structured multi-stage pipeline inspired by IEEE research methodology, incorporating ambiguity detection, interactive schema refinement, validation, and multi-dialect SQL generation.
+
+## Live Deployment
+
+Frontend (Vercel):  
+https://your-vercel-frontend-url.vercel.app
+
+Backend API (Render):  
+https://nl-to-er-diagram-and-sql-generator.onrender.com
 
 ## What It Does
 
@@ -15,6 +23,8 @@ Multi-Stage NL to ER Diagram and SQL Generator transforms natural language requi
 - Generates SQL for multiple database dialects  
 - Performs structural validation and normalization checks  
 - Exports validated schema and SQL outputs  
+- Supports cloud deployment using Vercel and Render  
+- Provides interactive frontend-backend API integration  
 
 ## Fig. 1(a) At-A-Glance Block Diagram
 
@@ -78,6 +88,28 @@ flowchart TB
     MermaidDiagram --> ValidationPanel
     SQLViewer --> ChatHistory
 ```
+
+## Tech Stack
+
+### Frontend
+
+* React.js
+* Mermaid.js
+* CSS
+* Axios
+
+### Backend
+
+* FastAPI
+* Pydantic
+* Python 3.11
+* Gemini API Integration
+
+### Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+
 ## Local Setup
 
 ### Prerequisites
@@ -86,7 +118,7 @@ flowchart TB
 * Node 18+
 * Optional: Docker
 
-### Change the .env.exmaple to .env file and add GEMINI API KEY
+### Change the `.env.example` to `.env` file and add GEMINI API KEY
 
 ### Backend
 
@@ -105,18 +137,43 @@ cd frontend
 npm install
 npm start
 ```
+
+## Production Deployment
+
+### Backend Deployment (Render)
+
+Build Command:
+
+```bash
+pip install -r backend/requirements.txt
+```
+
+Start Command:
+
+```bash
+cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+```
+
+### Frontend Deployment (Vercel)
+
+Environment Variable:
+
+```env
+REACT_APP_API_URL=https://nl-to-er-diagram-and-sql-generator.onrender.com
+```
+
 ## Environment
 
 Copy `.env.example` to local `.env` files.
 
-Backend:
+### Backend
 
 * GEMINI_API_KEY
 * BACKEND_URL
 * FRONTEND_URL
 * DEBUG
 
-Frontend:
+### Frontend
 
 * REACT_APP_API_URL
 
@@ -149,7 +206,9 @@ The system works without an API key. API key usage is optional.
 
 Refer to:
 
+```text
 docs/architecture.md
+```
 
 for detailed system architecture, pipeline flow, and module explanations.
 
@@ -167,5 +226,5 @@ Vellore Institute of Technology Chennai
 Multi-Stage Question-Driven Framework for Automated <br>
 Entity-Relationship Modeling and Multi-Dialect SQL Synthesis
 
-
-
+```
+```
